@@ -1,0 +1,287 @@
+/*   1. 全局重置与CSS变量   */
+:root {
+  /* 配色方案 */
+  --primary: #0066cc;       /* 主色：专业蓝色 */
+  --text-main: #333;        /* 文字：柔和深灰 */
+  --text-sub: #666;         /* 次要文字：中灰 */
+  --bg-page: #f5f5f5;       /* 背景：浅灰色 */
+  --border-color: #e0e0e0;  /* 边框：极浅灰 */
+  /* 排版规则 */
+  --font-h1: 36px;          /* h1字号 */
+  --font-h2: 24px;          /* h2字号 */
+  --font-h3: 20px;          /* h3字号 */
+  --font-body: 16px;        /* 正文字号 */
+  --line-height: 1.6;       /* 行高 */
+  --space-title: 20px;      /* 标题下间距 */
+  --space-paragraph: 10px;  /* 段落间间距 */
+  --space-module: 40px;     /* 模块间间距 */
+  /* 设计特点补充 */
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.08); /* 卡片轻微阴影 */
+  --card-radius: 8px;      /* 卡片圆角 */
+  --decor-bar-width: 4px;  /* 左侧装饰条宽度 */
+  /* 响应式断点 */
+  --mobile-break: 576px;    /* 手机断点 */
+  --tablet-break: 768px;    /* 平板断点 */
+}
+
+/* 全局重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 主体字体（易读+跨平台） */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Microsoft YaHei", "微软雅黑", sans-serif;
+  font-size: var(--font-body);
+  line-height: var(--line-height);
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  padding: 20px 10px; /* 基础内边距，适配小屏 */
+}
+
+/* ===================== 2. 头部样式（header） ===================== */
+header {
+  max-width: 800px;
+  margin: 0 auto var(--space-module);
+  background: white;
+  padding: 24px 16px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border-left: var(--decor-bar-width) solid var(--primary);
+  /* Flex布局：垂直居中，适配不同屏幕 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+header h1 {
+  font-size: var(--font-h1);
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+header p {
+  color: var(--text-sub);
+  margin-bottom: 16px;
+}
+
+/* 导航容器 - Flex核心布局 */
+.nav-container {
+  display: flex;
+  width: 100%;
+  justify-content: center; /* 水平居中 */
+  gap: 8px; /* 按钮间距 */
+}
+
+header nav button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* 按钮不收缩 */
+}
+
+header nav button:hover {
+  background: #0052a3; /* 主色加深 */
+  transform: translateY(-2px); /* 轻微上浮 */
+}
+
+header nav a {
+  text-decoration: none; /* 去除下划线 */
+}
+
+/* ===================== 3. 主体内容（main） ===================== */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 模块通用样式 */
+main section {
+  background: white;
+  padding: 20px 16px;
+  margin-bottom: var(--space-module);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  border-left: var(--decor-bar-width) solid var(--primary);
+}
+
+main section h2 {
+  font-size: var(--font-h2);
+  color: var(--primary);
+  margin-bottom: var(--space-title);
+  position: relative;
+}
+
+main section p {
+  margin-bottom: var(--space-paragraph);
+  color: var(--text-main);
+}
+
+main section article p,
+main section p em {
+  color: var(--text-sub);
+}
+
+/* 技能列表 - Flex多栏核心布局 */
+.skills-list {
+  list-style: none;
+  margin-left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  flex-wrap: wrap; /* 自动换行 */
+  gap: 16px; /* 列表项间距 */
+}
+
+.skills-list li {
+  flex: 3 0 calc(33.333% - 10.666px); /* 默认3栏（桌面） */
+  margin-bottom: 0;
+  padding-left: 20px;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+.skills-list li:hover{
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  border-color: var(--primary);
+}
+
+/* 列表项前小圆点 */
+.skills-list li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 项目/教育经历卡片 */
+main section article {
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--card-radius);
+  margin-top: 16px;
+  transition: all 0.3s ease;
+}
+
+main section article:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  border-color: var(--primary);
+}
+
+main section article h3 {
+  font-size: var(--font-h3);
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+/* 个人照片 */
+main section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  margin-top: 16px;
+  display: block;
+  transition: all 0.3s ease;
+}
+main section img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  border-color: #f7ec86;
+}
+
+/* ===================== 4. 底部样式（footer） ===================== */
+footer {
+  max-width: 800px;
+  margin: var(--space-module) auto 0;
+  text-align: center;
+  color: var(--text-sub);
+  font-size: 14px;
+  padding: 20px 16px;
+  background: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* ===================== 5. 媒体查询 - 响应式适配 ===================== */
+/* 平板设备 (576px ≤ 宽度 < 768px)：技能2栏 + 导航横向 */
+@media (min-width: var(--mobile-break)) and (max-width: calc(var(--tablet-break) - 1px)) {
+  body {
+    padding: 30px 15px;
+  }
+  header {
+    padding: 28px 20px;
+  }
+  main section {
+    padding: 22px 20px;
+  }
+  /* 技能2栏布局 */
+  .skills-list li {
+    flex: 1 0 calc(50% - 8px); /* 50%宽度 - gap一半 */
+  }
+  .nav-container {
+    gap: 10px;
+  }
+}
+
+/* 桌面设备 (宽度 ≥ 768px)：技能3栏 + 导航横向 */
+@media (min-width: var(--tablet-break)) {
+  body {
+    padding: 40px 20px;
+  }
+  header {
+    padding: 32px 32px;
+  }
+  main section {
+    padding: 24px 32px;
+  }
+  /* 技能3栏布局 */
+  .skills-list li {
+    flex: 1 0 calc(33.333% - 10.666px); /* 33.333%宽度 - gap分摊 */
+  }
+  .nav-container {
+    gap: 12px;
+  }
+}
+
+/* 手机设备 (宽度 < 576px)：技能1栏 + 导航纵向 */
+@media (max-width: calc(var(--mobile-break) - 1px)) {
+  /* 缩小字体适配小屏 */
+  :root {
+    --font-h1: 28px;
+    --font-h2: 20px;
+    --font-h3: 18px;
+    --font-body: 14px;
+    --space-module: 30px; /* 减小模块间距 */
+  }
+  /* 导航纵向排列 */
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  /* 导航按钮全屏宽适配触控 */
+  header nav button {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 0;
+  }
+  header p {
+    margin-bottom: 12px;
+  }
+    .skills-list li {
+    flex: 1 0 calc(100%); /* 50%宽度 - gap一半 */
+  }
+}
