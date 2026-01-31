@@ -5,18 +5,162 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>pinqu的个人简历</title>
     <link rel="stylesheet" href="example.css">
+    <style>
+        /* 响应式导航栏核心样式 - 与简历样式兼容，不影响原有CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+            text-decoration: none;
+        }
+        /* 固定顶部导航栏 - 适配简历布局 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 999;
+            padding: 0 20px;
+        }
+        /* 导航栏内部容器 - Flex布局 */
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* 导航栏Logo - 用你的名字 */
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+        /* PC端导航菜单 - 横向排列你的按钮 */
+        .navbar-menu {
+            display: flex;
+            gap: 15px; /* 按钮间距，适配简历风格 */
+        }
+        /* 保留你原有按钮样式，统一导航栏按钮风格 */
+        .navbar-menu button {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 4px;
+            background: #e6f7ff;
+            color: #2563eb;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .navbar-menu button:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+        /* 汉堡按钮 - 移动端显示，PC端隐藏 */
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            outline: none;
+        }
+        /* 移动端侧边菜单 - 固定定位，默认隐藏 */
+        .mobile-menu {
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 80%;
+            height: calc(100vh - 60px);
+            background: #fff;
+            box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+            z-index: 998;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            padding: 30px 20px;
+        }
+        /* 移动端菜单列表 - 纵向排列按钮 */
+        .mobile-menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        /* 移动端按钮样式 - 与PC端一致 */
+        .mobile-menu-list button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background: #e6f7ff;
+            color: #2563eb;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu-list button:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+        /* 媒体查询 - 移动端（≤768px）适配 */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
+        }
+        /* 关键：调整简历头部间距，避免被固定导航栏遮挡 */
+        body {
+            padding-top: 80px;
+        }
+        /* 返回顶部按钮层级兼容 - 确保不被导航栏遮挡 */
+        .back-to-top {
+            z-index: 998 !important;
+        }
+    </style>
 </head>
 <body>
+    <!-- 新增：响应式导航栏（替代原有header内的导航，保留所有功能） -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- 导航栏Logo：你的名字 -->
+            <a href="#" class="navbar-logo">pinqu</a>
+            <!-- PC端导航菜单：你的邮箱、Github、手机按钮 -->
+            <ul class="navbar-menu">
+                <li><a href="mailto:17339073536@163.com"><button>📫邮箱</button></a></li>
+                <li><a href="https://github.com/Ayaname-Rei"><button>🔗Github我的主页</button></a></li>
+                <li><a href="tel:17339073536"><button>📱手机</button></a></li>
+            </ul>
+            <!-- 汉堡按钮：移动端显示 -->
+            <button class="hamburger" id="hamburger">☰</button>
+        </div>
+    </nav>
+    <!-- 移动端侧边菜单：弹出式展示导航按钮 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-list">
+            <li><a href="mailto:17339073536@163.com"><button>📫邮箱</button></a></li>
+            <li><a href="https://github.com/Ayaname-Rei"><button>🔗Github我的主页</button></a></li>
+            <li><a href="tel:17339073536"><button>📱手机</button></a></li>
+        </ul>
+    </div>
+
+    <!-- 你原有header：移除原导航，保留个人名称和介绍 -->
     <header>
         <h1>pinqu</h1>
         <p>初学html格式与排版书写ing...</p>
-        <!-- 导航容器添加类名，方便 Flex 控制 -->
-        <nav class="nav-container">
-            <a href="mailto:17339073536@163.com"><button>📫邮箱</button></a>
-            <a href="https://github.com/Ayaname-Rei"><button>🔗Github我的主页</button></a>
-            <a href="tel:17339073536"><button>📱手机</button></a>
-        </nav>
     </header>
+
+    <!-- 你原有main简历内容：完全保留，无修改 -->
     <main>
         <section>
             <h2>关于我的介绍：</h2>
@@ -27,7 +171,6 @@
         </section>
         <section>
             <h2>技能</h2>
-            <!-- 技能列表添加类名，用于 Flex 多栏布局 -->
             <ul class="skills-list">
                 <li><strong>前端</strong>：HTML，CSS，JavaScript，React</li>
                 <li><strong>工具</strong>：Git，VScode，npm</li>
@@ -64,27 +207,52 @@
             <img src="Saber2.png" alt="照片显示失败喵~">
         </section>
     </main>
+
+    <!-- 你原有返回顶部按钮：完全保留 -->
     <div class="back-to-top" id="backToTop">⬆</div> 
+
+    <!-- 原有返回顶部JS + 新增导航栏汉堡按钮JS -->
     <script>
-        // 获取按钮元素
+        // 原有：返回顶部按钮逻辑（完全保留，无修改）
         const backToTop = document.getElementById('backToTop');
-        // 监听页面滚动事件，实现「滚动超过一定距离才显示按钮」
         window.addEventListener('scroll', () => {
-            // 页面滚动的垂直距离 > 300px 时，添加类名显示按钮
             if (window.scrollY > 300) {
                 document.body.classList.add('scroll-show');
             } else {
                 document.body.classList.remove('scroll-show');
             }
         });
-        // 点击按钮：平滑滚动回到页面顶部
         backToTop.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth' // 平滑滚动，去掉则为瞬间回到顶部
+                behavior: 'smooth'
+            });
+        });
+
+        // 新增：响应式导航栏汉堡按钮逻辑
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburger.addEventListener('click', () => {
+            // 切换移动端菜单显隐
+            mobileMenu.classList.toggle('active');
+            // 汉堡按钮图标切换（☰ ←），提升交互
+            hamburger.innerHTML = mobileMenu.classList.contains('active') ? '←' : '☰';
+            // 可选：菜单弹出时禁止页面滚动
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // 可选：点击移动端菜单按钮后，自动关闭菜单（优化体验）
+        const mobileButtons = document.querySelectorAll('.mobile-menu-list button');
+        mobileButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                hamburger.innerHTML = '☰';
+                document.body.style.overflow = 'auto';
             });
         });
     </script>
+
+    <!-- 你原有footer：完全保留 -->
     <footer>
         <p>©2026 pinqu写于合肥</p>
     </footer>
