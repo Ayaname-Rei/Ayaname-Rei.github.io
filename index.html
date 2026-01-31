@@ -64,6 +64,27 @@
             <img src="Saber2.png" alt="照片显示失败喵~">
         </section>
     </main>
+    <div class="back-to-top" id="backToTop">⬆</div> 
+    <script>
+        // 获取按钮元素
+        const backToTop = document.getElementById('backToTop');
+        // 监听页面滚动事件，实现「滚动超过一定距离才显示按钮」
+        window.addEventListener('scroll', () => {
+            // 页面滚动的垂直距离 > 300px 时，添加类名显示按钮
+            if (window.scrollY > 300) {
+                document.body.classList.add('scroll-show');
+            } else {
+                document.body.classList.remove('scroll-show');
+            }
+        });
+        // 点击按钮：平滑滚动回到页面顶部
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // 平滑滚动，去掉则为瞬间回到顶部
+            });
+        });
+    </script>
     <footer>
         <p>©2026 pinqu写于合肥</p>
     </footer>

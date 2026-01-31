@@ -201,6 +201,52 @@ main section img:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   border-color: #f7ec86;
 }
+/* 核心：返回顶部按钮样式 */
+        .back-to-top {
+            /* 固定定位：右下角核心 */
+            position: fixed;
+            right: 20px;    /* 距右侧距离，可改 */
+            bottom: 20px;   /* 距底部距离，可改 */
+            /* 样式美化：圆形+图标+背景 */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2563eb; /* 主色调，可改 */
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            /* 交互优化 */
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* 阴影增加立体感 */
+            transition: all 0.3s ease; /* 过渡动画 */
+            /* 初始隐藏：配合JS滚动显隐，若想一直显示可删 */
+            opacity: 0;
+            pointer-events: none; /* 隐藏时禁止点击 */
+            z-index: 9999; /* 置顶层级，避免被其他元素遮挡 */
+        }
+        /* 按钮悬浮/点击反馈 */
+        .back-to-top:hover, .back-to-top:active {
+            background: #1d4ed8;
+            transform: scale(0.95); /* 点击缩小，增加交互感 */
+        }
+
+        /* 核心：仅移动端可见（媒体查询），PC端隐藏 */
+        /* 屏幕宽度≤768px时显示（主流移动端断点，可按需修改） */
+        @media (max-width: 768px) {
+            /* 滚动显隐：当页面滚动超过300px时显示，否则隐藏 */
+            body.scroll-show .back-to-top {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+        /* 屏幕宽度>768px时（PC端）完全隐藏 */
+        @media (min-width: 769px) {
+            .back-to-top {
+                display: none !important;
+            }
+        }
 
 /* ===================== 4. 底部样式（footer） ===================== */
 footer {
@@ -217,7 +263,7 @@ footer {
 
 /* ===================== 5. 媒体查询 - 响应式适配 ===================== */
 /* 平板设备 (576px ≤ 宽度 < 768px)：技能2栏 + 导航横向 */
-@media (min-width: var(--mobile-break)) and (max-width: calc(var(--tablet-break) - 1px)) {
+@media (min-width: 576px) and (max-width: 767px) {
   body {
     padding: 30px 15px;
   }
@@ -237,7 +283,7 @@ footer {
 }
 
 /* 桌面设备 (宽度 ≥ 768px)：技能3栏 + 导航横向 */
-@media (min-width: var(--tablet-break)) {
+@media (min-width: 768px) {
   body {
     padding: 40px 20px;
   }
@@ -257,7 +303,7 @@ footer {
 }
 
 /* 手机设备 (宽度 < 576px)：技能1栏 + 导航纵向 */
-@media (max-width: calc(var(--mobile-break) - 1px)) {
+@media (max-width: 575px) {
   /* 缩小字体适配小屏 */
   :root {
     --font-h1: 28px;
