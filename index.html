@@ -34,18 +34,18 @@
             justify-content: space-between;
             align-items: center;
         }
-        /* 导航栏Logo - 用你的名字 */
+        /* 导航栏Logo - 用pinqu作为网页名字 */
         .navbar-logo {
             font-size: 24px;
             font-weight: bold;
             color: #2563eb;
         }
-        /* PC端导航菜单 - 横向排列你的按钮 */
+        /* PC端导航菜单 - 横向排列按钮 */
         .navbar-menu {
             display: flex;
             gap: 15px; /* 按钮间距，适配简历风格 */
         }
-        /* 保留你原有按钮样式，统一导航栏按钮风格 */
+        /* 统一导航栏按钮风格 */
         .navbar-menu button {
             padding: 6px 12px;
             border: none;
@@ -133,9 +133,9 @@
     <!-- 新增：响应式导航栏（替代原有header内的导航，保留所有功能） -->
     <nav class="navbar">
         <div class="navbar-container">
-            <!-- 导航栏Logo：你的名字 -->
+            <!-- 导航栏Logo：pinqu -->
             <a href="#" class="navbar-logo">pinqu</a>
-            <!-- PC端导航菜单：你的邮箱、Github、手机按钮 -->
+            <!-- PC端导航菜单：邮箱、Github、手机按钮 -->
             <ul class="navbar-menu">
                 <li><a href="mailto:17339073536@163.com"><button>📫邮箱</button></a></li>
                 <li><a href="https://github.com/Ayaname-Rei"><button>🔗Github我的主页</button></a></li>
@@ -154,13 +154,13 @@
         </ul>
     </div>
 
-    <!-- 你原有header：移除原导航，保留个人名称和介绍 -->
+    <!-- header：移除原导航，保留个人名称和介绍 -->
     <header>
         <h1>pinqu</h1>
         <p>初学html格式与排版书写ing...</p>
     </header>
 
-    <!-- 你原有main简历内容：完全保留，无修改 -->
+    <!-- main简历内容：无修改 -->
     <main>
         <section>
             <h2>关于我的介绍：</h2>
@@ -208,12 +208,12 @@
         </section>
     </main>
 
-    <!-- 你原有返回顶部按钮：完全保留 -->
+    <!-- 返回顶部按钮：保留 -->
     <div class="back-to-top" id="backToTop">⬆</div> 
 
-    <!-- 原有返回顶部JS + 新增导航栏汉堡按钮JS -->
+    <!-- 返回顶部JS + 新增导航栏汉堡按钮JS -->
     <script>
-        // 原有：返回顶部按钮逻辑（完全保留，无修改）
+        // 返回顶部按钮
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
@@ -241,7 +241,7 @@
             document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
         });
 
-        // 可选：点击移动端菜单按钮后，自动关闭菜单（优化体验）
+        // 优化：点击移动端菜单按钮后，自动关闭菜单（）
         const mobileButtons = document.querySelectorAll('.mobile-menu-list button');
         mobileButtons.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -252,7 +252,7 @@
         });
     </script>
 
-    <!-- 你原有footer：完全保留 -->
+    <!-- footer：无改动 -->
     <footer>
         <p>©2026 pinqu写于合肥</p>
     </footer>
