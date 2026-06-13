@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ayaname-Rei 的个人简介主页，计算机科学与技术专业学生，分享技术、学习与动漫兴趣。">
-  <title>Ayaname-Rei | Computer Science Profile</title>
+  <meta name="description" content="Ayaname-Rei 的个人主页：计算机科学与技术专业学生，记录学习、项目、动漫审美与日常分享。">
+  <title>Ayaname-Rei | Soft Anime Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0e0e10;
-      --surface: #1c1c21;
-      --surface-2: #24242a;
-      --line: #373740;
-      --text: #f0f0f0;
-      --muted: #b9bbc5;
-      --primary: #00e0ff;
-      --accent: #d8b35d;
-      --rei: #bfd9ef;
-      --danger: #d84f5f;
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+      --ink: #132033;
+      --muted: #5f7086;
+      --soft: #eef7fb;
+      --paper: #fbfdff;
+      --line: #cfdeea;
+      --blue: #7db9d6;
+      --deep: #0c2340;
+      --petal: #f3c9d5;
+      --gold: #c7a36a;
       --radius: 8px;
-      --max: 1180px;
+      --max: 1160px;
     }
 
     * {
@@ -35,26 +33,14 @@
 
     body {
       margin: 0;
-      color: var(--text);
+      color: var(--ink);
       font-family: "Noto Sans SC", "Microsoft YaHei", sans-serif;
       background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-        radial-gradient(circle at 12% 10%, rgba(0, 224, 255, 0.18), transparent 30%),
-        radial-gradient(circle at 86% 2%, rgba(216, 179, 93, 0.16), transparent 28%),
-        var(--bg);
-      background-size: 44px 44px, 44px 44px, auto, auto, auto;
-      line-height: 1.7;
-    }
-
-    body::before {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      content: "";
-      opacity: 0.34;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+        linear-gradient(90deg, rgba(125, 185, 214, 0.12) 1px, transparent 1px),
+        linear-gradient(rgba(125, 185, 214, 0.10) 1px, transparent 1px),
+        linear-gradient(180deg, #f8fcff 0%, #eef7fb 48%, #fdf8f9 100%);
+      background-size: 44px 44px, 44px 44px, auto;
+      line-height: 1.75;
     }
 
     a {
@@ -71,10 +57,10 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
-      background: rgba(14, 14, 16, 0.88);
-      backdrop-filter: blur(14px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(19, 32, 51, 0.12);
+      background: rgba(251, 253, 255, 0.86);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
@@ -84,31 +70,29 @@
       width: min(100% - 32px, var(--max));
       min-height: 64px;
       margin: 0 auto;
-      gap: 24px;
+      gap: 20px;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
-      font-size: 1.3rem;
       font-weight: 700;
     }
 
     .brand-mark {
       width: 18px;
       height: 18px;
-      border: 2px solid var(--primary);
-      border-right-color: var(--accent);
-      rotate: 45deg;
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      box-shadow: inset 6px 0 0 rgba(243, 201, 213, 0.85);
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 6px;
+      gap: 4px;
       padding: 0;
       margin: 0;
       list-style: none;
@@ -124,73 +108,75 @@
 
     .nav-links a:hover,
     .nav-links a:focus-visible {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.08);
+      color: var(--deep);
+      background: rgba(125, 185, 214, 0.14);
       outline: none;
     }
 
     .hero {
       min-height: calc(100vh - 64px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: #f6fbff;
       background:
-        linear-gradient(90deg, rgba(14, 14, 16, 0.92) 0%, rgba(14, 14, 16, 0.68) 45%, rgba(14, 14, 16, 0.28) 72%, rgba(14, 14, 16, 0.88) 100%),
-        url("assets/anime/rei-ayanami.jpg") center right / cover no-repeat;
+        linear-gradient(90deg, rgba(6, 15, 32, 0.78) 0%, rgba(6, 15, 32, 0.50) 38%, rgba(6, 15, 32, 0.10) 66%, rgba(6, 15, 32, 0.56) 100%),
+        url("assets/soft-rei/rei-blue-soft.png") center right / cover no-repeat;
     }
 
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
+      grid-template-columns: minmax(0, 1fr) 320px;
       align-items: end;
       width: min(100% - 32px, var(--max));
       min-height: calc(100vh - 64px);
       margin: 0 auto;
       gap: 28px;
-      padding: 72px 0 52px;
+      padding: 84px 0 54px;
     }
 
     .hero-copy {
-      max-width: 760px;
-      animation: rise 720ms ease-out both;
+      max-width: 680px;
     }
 
-    .hero-kicker {
-      margin: 0 0 14px;
-      color: var(--primary);
-      font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
-      font-size: clamp(1.15rem, 3vw, 1.55rem);
-      font-weight: 600;
+    .hero-note {
+      margin: 0 0 18px;
+      color: #cfeefd;
+      font-size: 1rem;
+      font-weight: 500;
     }
 
     h1,
     h2,
     h3 {
       margin: 0;
-      line-height: 1.08;
+      line-height: 1.16;
+    }
+
+    h1,
+    h2 {
+      font-family: "Shippori Mincho", "Noto Sans SC", serif;
+      font-weight: 700;
     }
 
     h1 {
-      max-width: 820px;
-      font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
-      font-size: clamp(2.35rem, 7vw, 5.4rem);
-      font-weight: 700;
+      max-width: 760px;
+      font-size: clamp(2.45rem, 6vw, 4.85rem);
     }
 
     h1 span {
       display: block;
     }
 
-    .hero-copy p {
-      max-width: 680px;
-      margin: 20px 0 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2.4vw, 1.16rem);
+    .hero-copy p:last-of-type {
+      max-width: 660px;
+      margin: 22px 0 0;
+      color: #e3eef6;
+      font-size: 1.05rem;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
     .button {
@@ -198,73 +184,68 @@
       align-items: center;
       justify-content: center;
       min-height: 42px;
-      padding: 10px 16px;
-      border: 1px solid var(--line);
+      padding: 9px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
       border-radius: 8px;
-      color: var(--text);
-      background: rgba(28, 28, 33, 0.78);
+      color: #f8fcff;
+      background: rgba(7, 20, 40, 0.34);
       font-weight: 700;
     }
 
     .button.primary {
-      border-color: rgba(0, 224, 255, 0.64);
-      background: var(--primary);
-      color: #071316;
+      color: var(--deep);
+      border-color: #dff6ff;
+      background: #dff6ff;
     }
 
     .button:hover,
     .button:focus-visible {
-      border-color: var(--text);
+      border-color: #fff;
       outline: none;
     }
 
-    .character-panel {
-      align-self: end;
-      border: 1px solid rgba(216, 179, 93, 0.4);
+    .image-card {
+      border: 1px solid rgba(255, 255, 255, 0.38);
       border-radius: var(--radius);
-      background: rgba(20, 20, 24, 0.72);
-      box-shadow: var(--shadow);
-      animation: rise 720ms 150ms ease-out both;
+      background: rgba(10, 27, 48, 0.42);
       overflow: hidden;
     }
 
-    .character-panel img {
-      aspect-ratio: 3 / 4;
+    .image-card img {
+      aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .character-panel div {
-      padding: 14px 16px 16px;
+    .image-card div {
+      padding: 14px 15px 16px;
     }
 
-    .character-panel strong {
+    .image-card strong {
       display: block;
-      font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
-      font-size: 1.45rem;
-      line-height: 1.1;
+      color: #fff;
+      font-family: "Shippori Mincho", "Noto Sans SC", serif;
+      font-size: 1.15rem;
     }
 
-    .character-panel p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 0.94rem;
+    .image-card p {
+      margin: 6px 0 0;
+      color: #dceaf3;
+      font-size: 0.92rem;
       line-height: 1.6;
     }
 
     main {
       width: min(100% - 32px, var(--max));
       margin: 0 auto;
-      padding: 52px 0 72px;
+      padding: 56px 0 72px;
     }
 
     .section {
       display: grid;
-      grid-template-columns: 0.92fr 1.38fr;
-      gap: 28px;
+      grid-template-columns: 0.94fr 1.28fr;
+      gap: 30px;
       padding: 34px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(19, 32, 51, 0.12);
     }
 
     .section:last-child {
@@ -272,21 +253,25 @@
     }
 
     .section-media {
-      min-height: 300px;
+      min-height: 320px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: var(--surface);
+      background: var(--paper);
       overflow: hidden;
     }
 
     .section-media img {
       height: 100%;
-      min-height: 300px;
+      min-height: 320px;
       object-fit: cover;
     }
 
     .section-media.rei img {
-      object-position: 54% center;
+      object-position: 58% center;
+    }
+
+    .section-media.moon img {
+      object-position: 48% center;
     }
 
     .section-media.saber img {
@@ -296,8 +281,7 @@
     .section-body {
       display: grid;
       align-content: center;
-      gap: 22px;
-      padding: 6px 0;
+      gap: 20px;
     }
 
     .section-title {
@@ -305,56 +289,58 @@
       align-items: baseline;
       justify-content: space-between;
       gap: 16px;
+      padding-bottom: 12px;
       border-bottom: 1px solid var(--line);
-      padding-bottom: 14px;
     }
 
     h2 {
-      font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
-      font-size: clamp(2.15rem, 5vw, 4rem);
-      font-weight: 700;
+      color: var(--deep);
+      font-size: clamp(2rem, 4.5vw, 3.55rem);
     }
 
     .section-index {
-      color: var(--accent);
-      font-family: "Barlow Condensed", "Noto Sans SC", sans-serif;
-      font-size: 1.28rem;
+      color: var(--gold);
       font-weight: 700;
     }
 
     .section-body p {
       margin: 0;
       color: var(--muted);
-      font-size: 1rem;
     }
 
-    .facts {
+    .facts,
+    .share-grid,
+    .contact-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin: 0;
       padding: 0;
+      margin: 0;
       list-style: none;
     }
 
-    .facts li,
+    .facts {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .fact,
     .share-item,
     .contact-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(28, 28, 33, 0.82);
+      background: rgba(251, 253, 255, 0.86);
       padding: 16px;
     }
 
-    .facts strong,
+    .fact strong,
     .share-item strong,
     .contact-card strong {
       display: block;
-      color: var(--text);
+      color: var(--ink);
       font-weight: 700;
     }
 
-    .facts span,
+    .fact span,
     .share-item span,
     .contact-card span {
       display: block;
@@ -364,73 +350,42 @@
       line-height: 1.55;
     }
 
-    .hobby-grid,
-    .share-grid,
-    .contact-grid {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
 
-    .hobby {
-      min-height: 190px;
+    .gallery figure {
+      margin: 0;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background-position: center;
-      background-size: cover;
+      background: var(--paper);
       overflow: hidden;
     }
 
-    .hobby:nth-child(1) {
-      background-image: linear-gradient(rgba(14, 14, 16, 0.22), rgba(14, 14, 16, 0.82)), url("assets/anime/saber-dusk.jpg");
+    .gallery img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
     }
 
-    .hobby:nth-child(2) {
-      background-image: linear-gradient(rgba(14, 14, 16, 0.1), rgba(14, 14, 16, 0.82)), url("assets/anime/rei-ayanami.jpg");
-      background-position: 60% center;
-    }
-
-    .hobby div {
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-      height: 100%;
-      padding: 16px;
-      background: linear-gradient(transparent 22%, rgba(0, 0, 0, 0.46));
-    }
-
-    .hobby strong {
-      font-size: 1.12rem;
-    }
-
-    .hobby span {
-      margin-top: 6px;
-      color: #d6d7dd;
-      font-size: 0.94rem;
+    .gallery figcaption {
+      padding: 10px 12px 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     .contact-card a {
-      color: var(--primary);
+      color: #247aa1;
       word-break: break-word;
     }
 
     .footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(19, 32, 51, 0.12);
       padding: 24px 16px 34px;
       color: var(--muted);
       text-align: center;
-      background: rgba(14, 14, 16, 0.64);
-    }
-
-    @keyframes rise {
-      from {
-        opacity: 0;
-        translate: 0 18px;
-      }
-      to {
-        opacity: 1;
-        translate: 0 0;
-      }
+      background: rgba(251, 253, 255, 0.7);
     }
 
     @media (max-width: 900px) {
@@ -440,15 +395,16 @@
       }
 
       .hero-inner {
-        align-items: end;
-        padding-top: 52px;
+        min-height: auto;
+        padding-top: 70px;
       }
 
-      .character-panel {
+      .image-card {
         max-width: 420px;
       }
 
-      .facts {
+      .facts,
+      .gallery {
         grid-template-columns: 1fr;
       }
     }
@@ -457,7 +413,6 @@
       .nav {
         align-items: flex-start;
         flex-direction: column;
-        gap: 8px;
         padding: 12px 0;
       }
 
@@ -467,27 +422,21 @@
 
       .hero {
         min-height: auto;
-        background-position: 63% center;
+        background-position: 60% center;
       }
 
       .hero-inner {
-        min-height: auto;
-        padding: 56px 0 34px;
+        padding: 54px 0 34px;
       }
 
-      .hobby-grid,
       .share-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .section {
-        padding: 28px 0;
-      }
-
       .section-media,
       .section-media img {
-        min-height: 240px;
+        min-height: 245px;
       }
     }
   </style>
@@ -501,7 +450,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="#profile">个人简介</a></li>
-        <li><a href="#hobbies">爱好</a></li>
+        <li><a href="#aesthetic">审美偏好</a></li>
         <li><a href="#sharing">内容分享</a></li>
         <li><a href="#contact">联系方式</a></li>
       </ul>
@@ -511,19 +460,19 @@
   <section class="hero" id="top">
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="hero-kicker">Computer Science Student / Anime Profile</p>
-        <h1><span>用代码构建秩序，</span><span>用热爱保持锋芒。</span></h1>
-        <p>你好，我是 Ayaname-Rei，一名计算机科学与技术专业学生。这里记录我的学习轨迹、项目实验、技术笔记，也放下那些让我持续保持想象力的动漫角色与故事。</p>
-        <div class="hero-actions" aria-label="快捷操作">
+        <p class="hero-note">计算机科学与技术 / 柔光动漫个人主页</p>
+        <h1><span>蓝色光里，</span><span>安静写代码。</span><span>慢慢成为自己。</span></h1>
+        <p>你好，我是 Ayaname-Rei，一名计算机科学与技术专业学生。这个主页以凌波丽的蓝色柔光为主调，加入同类型 Saber 动画图片，记录我的学习、项目、审美和内容输出。</p>
+        <div class="hero-actions">
           <a class="button primary" href="#sharing">查看分享</a>
           <a class="button" href="https://github.com/Ayaname-Rei" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
-      <aside class="character-panel" aria-label="角色灵感 Saber">
-        <img src="assets/anime/saber-dusk.jpg" alt="Saber 动漫风格插图">
+      <aside class="image-card" aria-label="凌波丽月光图片">
+        <img src="assets/soft-rei/rei-moon-silhouette.jpg" alt="凌波丽月光剪影动画图片">
         <div>
-          <strong>Saber / discipline</strong>
-          <p>蓝与金的骑士感，代表清晰目标、稳定执行和对技术细节的尊重。</p>
+          <strong>Rei / moonlight</strong>
+          <p>冷蓝、留白、月光与安静轮廓，是这一版主页的情绪基准。</p>
         </div>
       </aside>
     </div>
@@ -531,78 +480,84 @@
 
   <main>
     <section class="section" id="profile">
-      <div class="section-media saber">
-        <img src="assets/anime/saber-dusk.jpg" alt="Saber 主题背景图">
+      <div class="section-media rei">
+        <img src="assets/soft-rei/rei-blue-soft.png" alt="凌波丽蓝色柔光动画图片">
       </div>
       <div class="section-body">
         <div class="section-title">
           <h2>个人简介</h2>
           <span class="section-index">01</span>
         </div>
-        <p>我正在系统学习计算机科学与技术，关注算法、数据结构、Web 开发、人工智能基础与工程实践。相比只停留在概念层面，我更喜欢把知识落到可运行的项目中，通过调试、复盘和迭代把能力真正沉淀下来。</p>
+        <p>我正在学习计算机科学与技术，关注算法、数据结构、Web 开发、AI 工具链和工程实践。相比堆叠概念，我更喜欢把知识写成可运行的小项目，再通过复盘让能力慢慢沉淀。</p>
         <ul class="facts">
-          <li><strong>专业方向</strong><span>计算机科学与技术，重视基础课与动手能力。</span></li>
-          <li><strong>当前关注</strong><span>前端工程、Python、算法题解、AI 工具链。</span></li>
-          <li><strong>角色灵感</strong><span>凌波丽的冷静观察，Saber 的秩序感与责任感。</span></li>
+          <li class="fact"><strong>专业方向</strong><span>计算机科学与技术，重视基础课与实践能力。</span></li>
+          <li class="fact"><strong>当前关注</strong><span>前端页面、Python 脚本、算法题解、AI 辅助学习。</span></li>
+          <li class="fact"><strong>视觉关键词</strong><span>凌波丽的冷蓝柔光，Saber 的温柔秩序感。</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section" id="hobbies">
-      <div class="section-media rei">
-        <img src="assets/anime/rei-ayanami.jpg" alt="凌波丽动漫风格背景图">
+    <section class="section" id="aesthetic">
+      <div class="section-media saber">
+        <img src="assets/soft-rei/saber-spring.png" alt="Saber 春日柔和动画图片">
       </div>
       <div class="section-body">
         <div class="section-title">
-          <h2>爱好</h2>
+          <h2>审美偏好</h2>
           <span class="section-index">02</span>
         </div>
-        <p>学习之外，我喜欢用动漫、游戏和影像给大脑换一种节奏。凌波丽和 Saber 是这版主页的视觉锚点：一个偏冷静、克制、科幻感，一个偏骑士、古典、理想主义。</p>
-        <div class="hobby-grid">
-          <article class="hobby">
-            <div><strong>动漫与角色设定</strong><span>关注角色气质、色彩、构图和叙事中的象征表达。</span></div>
-          </article>
-          <article class="hobby">
-            <div><strong>技术实验</strong><span>把课堂知识写成小工具、小页面和可复用的学习笔记。</span></div>
-          </article>
+        <p>我喜欢有空气感的动漫画面：人物安静，光线干净，背景留出呼吸空间。凌波丽的蓝色夜光给页面定下安静底色，Saber 的春日与晨光图片补充温度，让页面不只是冷，也有柔和的生活感。</p>
+        <div class="gallery">
+          <figure>
+            <img src="assets/soft-rei/rei-blue-soft.png" alt="凌波丽蓝光近景">
+            <figcaption>冷蓝侧光、人物近景、安静留白。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/soft-rei/saber-morning.png" alt="Saber 晨光和服动画图片">
+            <figcaption>晨光、和服、低饱和暖色。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/soft-rei/saber-spring.png" alt="Saber 春日花叶动画图片">
+            <figcaption>春日、花叶、柔和青绿背景。</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <section class="section" id="sharing">
-      <div class="section-media saber">
-        <img src="assets/anime/saber-dusk.jpg" alt="Saber 动漫图片作为内容分享背景">
+      <div class="section-media moon">
+        <img src="assets/soft-rei/rei-moon-silhouette.jpg" alt="凌波丽月光剪影动画图片">
       </div>
       <div class="section-body">
         <div class="section-title">
           <h2>内容分享</h2>
           <span class="section-index">03</span>
         </div>
-        <p>这个主页后续会作为我的公开索引，集中放置学习过程中的输出。内容会尽量保持可复现、可验证、可继续维护。</p>
+        <p>后续这里会作为公开索引，用来整理学习过程中的输出。内容会尽量保持清晰、可复现、可继续补充。</p>
         <div class="share-grid">
           <article class="share-item"><strong>学习笔记</strong><span>数据结构、操作系统、计算机网络、数据库等课程知识整理。</span></article>
           <article class="share-item"><strong>项目记录</strong><span>Web 页面、小型应用、脚本工具和课程设计的实现过程。</span></article>
-          <article class="share-item"><strong>算法题解</strong><span>记录题目思路、复杂度分析和容易踩坑的边界条件。</span></article>
-          <article class="share-item"><strong>动漫随笔</strong><span>从美术、配色和角色塑造角度写一些轻量观察。</span></article>
+          <article class="share-item"><strong>算法题解</strong><span>记录题目思路、复杂度分析和容易遗漏的边界条件。</span></article>
+          <article class="share-item"><strong>动漫审美</strong><span>记录角色设定、色彩、构图与情绪氛围的观察。</span></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="contact">
-      <div class="section-media rei">
-        <img src="assets/anime/rei-ayanami.jpg" alt="凌波丽动漫图片作为联系方式背景">
+      <div class="section-media saber">
+        <img src="assets/soft-rei/saber-morning.png" alt="Saber 晨光和服动画图片">
       </div>
       <div class="section-body">
         <div class="section-title">
           <h2>联系方式</h2>
           <span class="section-index">04</span>
         </div>
-        <p>欢迎交流计算机学习、项目实践、前端页面设计和动漫相关话题。以下信息可以在后续根据你的真实账号继续替换。</p>
+        <p>欢迎交流计算机学习、前端页面、项目实践与动漫相关内容。下面的信息可以继续替换成你的真实邮箱、博客或社交账号。</p>
         <div class="contact-grid">
           <div class="contact-card"><strong>GitHub</strong><span><a href="https://github.com/Ayaname-Rei" target="_blank" rel="noreferrer">github.com/Ayaname-Rei</a></span></div>
           <div class="contact-card"><strong>个人主页</strong><span><a href="https://ayaname-rei.github.io" target="_blank" rel="noreferrer">ayaname-rei.github.io</a></span></div>
           <div class="contact-card"><strong>Email</strong><span>待补充，可替换为你的常用邮箱。</span></div>
-          <div class="contact-card"><strong>内容更新</strong><span>技术笔记与项目进展会优先同步到 GitHub 仓库。</span></div>
+          <div class="contact-card"><strong>更新内容</strong><span>技术笔记与项目记录会优先同步到 GitHub 仓库。</span></div>
         </div>
       </div>
     </section>
